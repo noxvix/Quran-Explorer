@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quran Explorer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Quran Explorer</h1>
-    <div class="search-container">
-        <input type="text" id="surah-name" placeholder="Type the surah name">
-        <button id="search-btn">Search</button>
-    </div>
-    <div id="result"></div>
+    <header class="bg-success text-white text-center py-4">
+        <h1>Quran Explorer</h1>
+    </header>
+    <main class="container mt-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-6 text-center">
+                <div class="input-group search-container mb-3">
+                    <input type="text" id="surah-name" class="form-control" placeholder="Type the surah name" aria-label="Surah name" aria-describedby="search-btn">
+                    <button class="btn btn-success" type="button" id="search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="result" class="card shadow-sm">
+                    <div class="card-body text-center"></div>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="app.js"></script>
 </body>
 </html>
