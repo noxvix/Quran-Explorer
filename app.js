@@ -7,7 +7,6 @@ function handleEnterKeyPress(event) {
   }
 }
 
-
 async function fetchSurah() {
   const surahName = document.getElementById('surah-name').value.trim();
   const resultContainer = document.getElementById('result');
@@ -45,7 +44,10 @@ async function fetchSurah() {
 
   const surahData = await surahResponse.json();
   const verses = surahData.verses
-  .map((verse) => `<p>${verse.number || verse.id}. ${verse.text_uthmani}</p>`)
-  .join('');
+    .map((verse) => `<p>${verse.number || verse.id}. ${verse.text_uthmani}</p>`)
+    .join('');
   resultContainer.innerHTML = `<h2 dir="rtl">${chapter.name_arabic} (${chapter.translated_name.name})</h2><div dir="rtl">${verses}</div>`;
+  
+  // Show the card after fetching the surah
+  resultContainer.style.display = 'block';
 }
